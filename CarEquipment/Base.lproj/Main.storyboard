@@ -110,7 +110,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcL-m1-71I" userLabel="Price View">
-                                <rect key="frame" x="16" y="412.5" width="288" height="72"/>
+                                <rect key="frame" x="16" y="436" width="288" height="72"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="quq-Eb-hPo">
                                         <rect key="frame" x="91" y="9" width="107" height="54"/>
@@ -137,13 +137,41 @@
                                     <constraint firstItem="quq-Eb-hPo" firstAttribute="centerX" secondItem="vcL-m1-71I" secondAttribute="centerX" id="ixl-ia-4eo"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d85-iP-Q99">
+                                <rect key="frame" x="16" y="400.5" width="288" height="19.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Zero to 60">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" in ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2.5 sec">
+                                        <attributes>
+                                            <color key="NSColor" red="0.75986534357070923" green="0.23019078373908997" blue="0.22782179713249207" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="oP3-6M-z6H" secondAttribute="trailing" id="1jC-rg-EWO"/>
+                            <constraint firstItem="vcL-m1-71I" firstAttribute="top" secondItem="d85-iP-Q99" secondAttribute="bottom" constant="16" id="4DB-Mm-xE0"/>
                             <constraint firstItem="oP3-6M-z6H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Lk-l5-uar"/>
                             <constraint firstItem="jgh-FB-i4I" firstAttribute="top" secondItem="oP3-6M-z6H" secondAttribute="bottom" constant="16" id="A3o-5O-InT"/>
-                            <constraint firstItem="vcL-m1-71I" firstAttribute="top" secondItem="jgh-FB-i4I" secondAttribute="bottom" constant="16" id="H6s-Lt-nSj"/>
+                            <constraint firstItem="d85-iP-Q99" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="A5o-Hj-Oa6"/>
+                            <constraint firstItem="d85-iP-Q99" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ahf-Wb-qrv"/>
+                            <constraint firstItem="d85-iP-Q99" firstAttribute="top" secondItem="jgh-FB-i4I" secondAttribute="bottom" constant="4" id="DL6-tf-Oh4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MXf-1d-rNF" secondAttribute="trailing" constant="16" id="LoY-k1-yew"/>
                             <constraint firstItem="Sqg-DS-wYL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="P9m-oL-tuq"/>
                             <constraint firstItem="oP3-6M-z6H" firstAttribute="top" secondItem="MXf-1d-rNF" secondAttribute="bottom" constant="32" id="XMo-RK-yua"/>
@@ -159,6 +187,7 @@
                     <connections>
                         <outlet property="allWheelSwich" destination="OYw-7C-qc6" id="bpe-Op-Vcq"/>
                         <outlet property="batterySelector" destination="hpl-Wd-kOS" id="O8x-ta-bXv"/>
+                        <outlet property="maxPerformanceLabel" destination="d85-iP-Q99" id="iEq-bu-woH"/>
                         <outlet property="maxPerformanceSwich" destination="Y5b-Sh-TKJ" id="UtM-QR-z01"/>
                         <outlet property="mileage" destination="ueh-GK-lCo" id="rm6-Ap-fBe"/>
                         <outlet property="priceLabel" destination="vOw-su-SpS" id="nXb-Jh-hu9"/>

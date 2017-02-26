@@ -23,8 +23,9 @@ class ViewController: UIViewController {
         mileage.text = battery.showMilege(index: sender.selectedSegmentIndex)
         checkAllWheelAndPerformance()
         estimatePrice()
-        
+        toggleMaxPerfLabel()
     }
+    
     @IBOutlet weak var batterySelector: UISegmentedControl!
     @IBOutlet weak var mileage: UILabel!
     
@@ -39,8 +40,10 @@ class ViewController: UIViewController {
     // Maximum Performance
     @IBAction func maxPerformanceSwiched(_ sender: UISwitch) {
         estimatePrice()
+        toggleMaxPerfLabel()
     }
     @IBOutlet weak var maxPerformanceSwich: UISwitch!
+    @IBOutlet weak var maxPerformanceLabel: UILabel!
     
     
     // Price
@@ -54,16 +57,6 @@ class ViewController: UIViewController {
     }
     
     func checkAllWheelAndPerformance() {
-        
-        // Check for max performance and show message about it
-        if allWheelSwich.isOn && mileage.text == "335 miles" {
-            mileage.text! += " | zero to 60 in 2.5 secs"
-        }
-        
-        // Remove max performance message if selector has been changed
-        if allWheelSwich.isOn == false && mileage.text == "335 miles | zero to 60 in 2.5 secs" {
-            mileage.text = "335 miles"
-        }
         
         // Check if All-Wheel drive is enabled by factory (for big battaries)
         if batterySelector.selectedSegmentIndex >= 2 {
@@ -85,5 +78,13 @@ class ViewController: UIViewController {
         
     }
 
+    func toggleMaxPerfLabel() {
+        if maxPerformanceSwich.isOn {
+            maxPerformanceLabel.isHidden = false
+        } else {
+            maxPerformanceLabel.isHidden = true
+        }
+    }
+    
 }
 
