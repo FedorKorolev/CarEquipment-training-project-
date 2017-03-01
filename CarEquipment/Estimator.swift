@@ -34,13 +34,10 @@ struct Estimator {
             price += 36_200
         }
         
-        let nsPrice = price as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        
-        let output = formatter.string(from: nsPrice)!
+        var output = "$\(price)"
         let endIndex = output.index(output.endIndex, offsetBy: -3)
+        output.insert(",", at: endIndex)
         
-        return output.substring(to: endIndex)
+        return output
     }
 }
